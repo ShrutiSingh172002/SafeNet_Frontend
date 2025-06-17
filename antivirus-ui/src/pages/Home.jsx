@@ -59,7 +59,9 @@ const Home = () => {
         <div className="why-choose-content">
           {/* Left Image */}
           <div className="antivirus-images">
-            <img src="/antivirus_image4.jpg" alt="Left Antivirus" />
+            <img src="/images/antivirus_image4.jpg" alt="Left Antivirus" />
+            <p>Hiee</p> 
+                  
           </div>
 
           {/* Center Text */}
@@ -72,7 +74,7 @@ const Home = () => {
 
           {/* Right Image */}
           <div className="antivirus-images">
-            <img src="/antivirus_image5.jpg" alt="Right Antivirus" />
+            <img src="/images/antivirus_image5.jpg" alt="Right Antivirus" />
           </div>
         </div>
       </section>
