@@ -60,7 +60,7 @@ const Home = () => {
           {/* Left Image */}
           <div className="antivirus-images">
             <img src="/images/antivirus_image4.jpg" alt="Left Antivirus" />
-            <p>Hiee</p> 
+            
                   
           </div>
 
