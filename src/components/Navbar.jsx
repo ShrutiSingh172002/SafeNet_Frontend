@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone } from 'lucide-react'; // import from lucide
+import { Phone } from 'lucide-react';
 import '../index.css';
 
 const Navbar = () => {
@@ -10,11 +10,14 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="logo">SafeNet</Link>
 
-        {/* Phone Number on Right */}
-        <span className="phone-number">
-          <Phone size={18} style={{ marginRight: '6px' }} />
-          +1 (877) 593-3790
-        </span>
+        {/* Right-side Items: Blog + Phone */}
+        <div className="navbar-right">
+          <Link to="/blog" className="nav-link">Blog</Link>
+          <span className="phone-number">
+            <Phone size={18} style={{ marginRight: '6px' }} />
+            +1 (877) 593-3790
+          </span>
+        </div>
       </div>
     </nav>
   );

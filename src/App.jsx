@@ -10,6 +10,7 @@ import Refund from './pages/Refund';
 import Contact from './pages/Contact';
 import './App.css';
 import ServiceDetail from './pages/ServiceDetail';
+import Blog from './pages/Blog';
 
 
 function App() {
@@ -24,8 +25,11 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund" element={<Refund />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/services/:id" element={<ServiceDetail />} />
+            <Route path="/contact" element={<Contact />} />
+             <Route path="/blog" element={<Blog />} />
+
+
           </Routes>
         </main>
         <Footer />
