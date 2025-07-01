@@ -158,3 +158,31 @@ section {
     width: 80px;
   }
 }
+.why-choose-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.why-left,
+.why-right {
+  flex: 1 1 45%;
+  min-width: 280px;
+}
+
+.why-left p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.why-right ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.why-right li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
