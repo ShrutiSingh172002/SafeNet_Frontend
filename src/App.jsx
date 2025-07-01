@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import './App.css';
 import ServiceDetail from './pages/ServiceDetail';
 import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
             <Route path="/refund" element={<Refund />} />
             <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/contact" element={<Contact />} />
-             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
 
 
           </Routes>
