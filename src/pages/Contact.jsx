@@ -1,6 +1,6 @@
 // src/pages/Contact.jsx
 import React, { useEffect } from 'react';
-import './Contact.css'; // Optional: for styling if you have a CSS file
+import './contact.css'; // Optional: for styling if you have a CSS file
 
 const Contact = () => {
   // Scroll to top when component mounts
