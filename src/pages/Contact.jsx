@@ -27,8 +27,8 @@ const Contact = () => {
 
       <h3 style={{ marginTop: '1.5rem' }}>Corporate Office</h3>
       <p>SafeNet Technologies</p>
-      <p>123 CyberTech Avenue, Suite 400</p>
-      <p>Toronto, Ontario, Canada</p>
+      <p>Sector 95,Gurgaon</p>
+      <p>Haryana,India</p>
 
       <p style={{ marginTop: '1.5rem' }}>
         You can also follow us on social media for security updates, product news, and cyber safety tips.
