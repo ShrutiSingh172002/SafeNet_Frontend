@@ -139,3 +139,49 @@
 .other-services a:hover {
   text-decoration: underline;
 }
+.extra-content {
+  margin: 20px 0;
+}
+
+.content-list, .feature-list {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.content-list li, .feature-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.features-section {
+  margin: 25px 0;
+}
+
+.features-section h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+.service-detail {
+  text-align: left;
+}
+
+.content-list, .feature-list {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.content-list li, .feature-list li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.features-heading {
+  margin: 15px 0 5px 0;
+  text-align: left;
+  font-weight: bold;
+}
+
+.description {
+  text-align: left;
+  margin-bottom: 10px;
+}

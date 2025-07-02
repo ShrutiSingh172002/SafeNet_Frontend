@@ -10,36 +10,32 @@ const Refund = () => {
       </p>
 
       <h3>Eligibility for Refund</h3>
-      <ul>
-        <li>You may request a refund within <strong>7 days</strong> of your original purchase date.</li>
-        <li>Refunds are considered in the following cases:
-          <ul>
-
-            
-            
-            <li>The product fails to install or activate due to a technical issue on our end.</li>
-            <li>Key features of the product do not function as advertised, and our support team is unable to resolve the issue.</li>
-            <li>You were charged in error or experienced duplicate billing.</li>
-          </ul>
-        </li>
+      <ul style={{textAlign: 'left', listStylePosition: 'inside', paddingLeft: '0', margin: '10px 0'}}>
+        <li style={{marginBottom: '5px'}}>You may request a refund within <strong>7 days</strong> of your original purchase date.</li>
+        <li style={{marginBottom: '5px'}}>Refunds are considered in the following cases:</li>
+      </ul>
+      <ul style={{textAlign: 'left', listStylePosition: 'inside', paddingLeft: '20px', margin: '5px 0'}}>
+        <li style={{marginBottom: '5px'}}>The product fails to install or activate due to a technical issue on our end.</li>
+        <li style={{marginBottom: '5px'}}>Key features of the product do not function as advertised, and our support team is unable to resolve the issue.</li>
+        <li style={{marginBottom: '5px'}}>You were charged in error or experienced duplicate billing.</li>
       </ul>
 
       <h3>Non-Refundable Situations</h3>
-      <ul>
-        <li>Requests made after the 7-day window.</li>
-        <li>Refunds for reasons not related to technical malfunction (e.g., user error, change of mind).</li>
-        <li>Purchases made through unauthorized resellers or third-party platforms.</li>
+      <ul style={{textAlign: 'left', listStylePosition: 'inside', paddingLeft: '0', margin: '10px 0'}}>
+        <li style={{marginBottom: '5px'}}>Requests made after the 7-day window.</li>
+        <li style={{marginBottom: '5px'}}>Refunds for reasons not related to technical malfunction (e.g., user error, change of mind).</li>
+        <li style={{marginBottom: '5px'}}>Purchases made through unauthorized resellers or third-party platforms.</li>
       </ul>
 
       <h3>How to Request a Refund</h3>
       <p>
         To initiate a refund, please contact our support team at <strong>support@safenet.com</strong>. Include the following:
-        <ul>
-          <li>Your order ID or proof of purchase.</li>
-          <li>A brief explanation of the issue you encountered.</li>
-          <li>Your contact email and system details (if technical issue).</li>
-        </ul>
       </p>
+      <ul style={{textAlign: 'left', listStylePosition: 'inside', paddingLeft: '0', margin: '10px 0'}}>
+        <li style={{marginBottom: '5px'}}>Your order ID or proof of purchase.</li>
+        <li style={{marginBottom: '5px'}}>A brief explanation of the issue you encountered.</li>
+        <li style={{marginBottom: '5px'}}>Your contact email and system details (if technical issue).</li>
+      </ul>
       <p>
         We aim to process all eligible refund requests within <strong>5–7 business days</strong> after reviewing your case.
       </p>
@@ -50,7 +46,7 @@ const Refund = () => {
       </p>
 
       <p>
-        Thank you for choosing SafeNet. Your satisfaction is important to us, and we're here to help if something doesn’t work as expected.
+        Thank you for choosing SafeNet. Your satisfaction is important to us, and we're here to help if something doesn't work as expected.
       </p>
     </div>
   );

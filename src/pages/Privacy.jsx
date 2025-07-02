@@ -14,11 +14,11 @@ const Privacy = () => {
       </p>
 
       <h3>How We Use Your Information</h3>
-      <ul>
-        <li>To provide and maintain our antivirus and cybersecurity services.</li>
-        <li>To notify you of updates, alerts, or product improvements.</li>
-        <li>To personalize your user experience and enhance service efficiency.</li>
-        <li>To troubleshoot issues and provide customer support.</li>
+      <ul style={{textAlign: 'left', listStylePosition: 'inside', paddingLeft: '0', margin: '10px 0'}}>
+        <li style={{marginBottom: '5px'}}>To provide and maintain our antivirus and cybersecurity services.</li>
+        <li style={{marginBottom: '5px'}}>To notify you of updates, alerts, or product improvements.</li>
+        <li style={{marginBottom: '5px'}}>To personalize your user experience and enhance service efficiency.</li>
+        <li style={{marginBottom: '5px'}}>To troubleshoot issues and provide customer support.</li>
       </ul>
 
       <h3>Data Protection and Storage</h3>
@@ -34,17 +34,19 @@ const Privacy = () => {
       <h3>Your Rights</h3>
       <p>
         You have full control over your data. At any time, you may:
-        <ul>
-          <li>Request access to the data we store about you.</li>
-          <li>Request correction or deletion of your personal information.</li>
-          <li>Withdraw consent for data processing.</li>
-        </ul>
+      </p>
+      <ul style={{textAlign: 'left', listStylePosition: 'inside', paddingLeft: '0', margin: '10px 0'}}>
+        <li style={{marginBottom: '5px'}}>Request access to the data we store about you.</li>
+        <li style={{marginBottom: '5px'}}>Request correction or deletion of your personal information.</li>
+        <li style={{marginBottom: '5px'}}>Withdraw consent for data processing.</li>
+      </ul>
+      <p>
         Simply contact our support team at <strong>support@safenet.com</strong> to make a request.
       </p>
 
       <h3>Policy Updates</h3>
       <p>
-        We may occasionally update this policy to reflect changes in regulations or services. When we do, we’ll notify users via email or a banner notification on our website.
+        We may occasionally update this policy to reflect changes in regulations or services. When we do, we'll notify users via email or a banner notification on our website.
       </p>
 
       <p>
