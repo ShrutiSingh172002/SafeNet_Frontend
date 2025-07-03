@@ -57,14 +57,8 @@ const About = () => {
     }
   ];
 
-  const containerStyle = {
-    minHeight: '100vh',
-    background: 'linear-gradient(135deg,rgb(88, 119, 190) 0%,rgb(101, 118, 163) 50%,rgb(88, 123, 203) 100%)',
-    fontFamily: 'system-ui, -apple-system, sans-serif'
-  };
-
   const cardStyle = {
-    background: 'rgba(255, 255, 255, 0.1)',
+    background: '#e6f2ff',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.2)',
     borderRadius: '16px',
@@ -79,6 +73,12 @@ const About = () => {
     backgroundClip: 'text'
   };
 
+  const containerStyle = {
+    minHeight: '100vh',
+    background: '#e6f2ff',
+    fontFamily: 'system-ui, -apple-system, sans-serif'
+  };
+
   return (
     <div style={containerStyle}>
       {/* Hero Section */}
@@ -86,7 +86,7 @@ const About = () => {
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, rgba(37, 99, 235, 0.2), rgba(147, 51, 234, 0.2))'
+          background: '#e6f2ff'
         }}></div>
         
         <div style={{ 
@@ -111,15 +111,15 @@ const About = () => {
             <h1 style={{
               fontSize: '4rem',
               fontWeight: 'bold',
-              color: 'white',
+              color: '#000',
               marginBottom: '24px',
               lineHeight: '1.1'
             }}>
-              About <span style={gradientTextStyle}>SafeNet</span>
+            
             </h1>
             <p style={{
               fontSize: '1.25rem',
-              color: '#d1d5db',
+              color: '#111',
               maxWidth: '768px',
               margin: '0 auto',
               lineHeight: '1.6'
@@ -151,20 +151,20 @@ const About = () => {
               cursor: 'pointer'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              e.currentTarget.style.background = '#e6f2ff';
               e.currentTarget.style.transform = 'translateY(-4px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.background = '#e6f2ff';
               e.currentTarget.style.transform = 'translateY(0)';
             }}>
               <div style={{ color: '#60a5fa', marginBottom: '8px', display: 'flex', justifyContent: 'center' }}>
                 {stat.icon}
               </div>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white', marginBottom: '4px' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#000', marginBottom: '4px' }}>
                 {stat.number}
               </div>
-              <div style={{ color: '#d1d5db', fontSize: '0.875rem' }}>
+              <div style={{ color: '#111', fontSize: '0.875rem' }}>
                 {stat.label}
               </div>
             </div>
@@ -181,27 +181,25 @@ const About = () => {
           alignItems: 'center' 
         }}>
           <div>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
-              Our Mission
-            </h2>
-            <p style={{ color: '#d1d5db', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '24px' }}>
+            <h2>Our Mission</h2>
+            <p>
               We are a dedicated team of cybersecurity experts, developers, and researchers focused on building 
               innovative antivirus solutions that are fast, lightweight, and incredibly effective.
             </p>
-            <p style={{ color: '#d1d5db', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '32px' }}>
+            <p>
               Whether you're a home user or a business, our tools are designed to detect and block malware, 
               ransomware, phishing attempts, and other digital threats before they reach you.
             </p>
             <div style={{
-              background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2))',
+              background: '#e6f2ff',
               borderRadius: '16px',
               padding: '24px',
               border: '1px solid rgba(59, 130, 246, 0.3)'
             }}>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'white', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#000', marginBottom: '12px' }}>
                 Our Simple Mission
               </h3>
-              <p style={{ color: '#e5e7eb', fontSize: '1.125rem' }}>
+              <p style={{ color: '#111', fontSize: '1.125rem' }}>
                 Protect what matters most — your identity, your data, and your peace of mind.
               </p>
             </div>
@@ -216,7 +214,7 @@ const About = () => {
             }}></div>
             <div style={{
               position: 'relative',
-              background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8))',
+              background: '#e6f2ff',
               borderRadius: '24px',
               padding: '32px',
               backdropFilter: 'blur(10px)',
@@ -236,8 +234,8 @@ const About = () => {
                   }}>
                     <Shield size={32} color="white" />
                   </div>
-                  <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px' }}>Advanced Protection</h4>
-                  <p style={{ color: '#9ca3af', fontSize: '0.875rem' }}>AI-powered threat detection</p>
+                  <h4 style={{ color: '#000', fontWeight: '600', marginBottom: '8px' }}>Advanced Protection</h4>
+                  <p style={{ color: '#111', fontSize: '0.875rem' }}>AI-powered threat detection</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
@@ -252,8 +250,8 @@ const About = () => {
                   }}>
                     <Zap size={32} color="white" />
                   </div>
-                  <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px' }}>Lightning Fast</h4>
-                  <p style={{ color: '#9ca3af', fontSize: '0.875rem' }}>Minimal system impact</p>
+                  <h4 style={{ color: '#000', fontWeight: '600', marginBottom: '8px' }}>Lightning Fast</h4>
+                  <p style={{ color: '#111', fontSize: '0.875rem' }}>Minimal system impact</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
@@ -268,8 +266,8 @@ const About = () => {
                   }}>
                     <Users size={32} color="white" />
                   </div>
-                  <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px' }}>User Friendly</h4>
-                  <p style={{ color: '#9ca3af', fontSize: '0.875rem' }}>Intuitive interface design</p>
+                  <h4 style={{ color: '#000', fontWeight: '600', marginBottom: '8px' }}>User Friendly</h4>
+                  <p style={{ color: '#111', fontSize: '0.875rem' }}>Intuitive interface design</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
@@ -284,8 +282,8 @@ const About = () => {
                   }}>
                     <Target size={32} color="white" />
                   </div>
-                  <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px' }}>Precision Focus</h4>
-                  <p style={{ color: '#9ca3af', fontSize: '0.875rem' }}>Targeted threat elimination</p>
+                  <h4 style={{ color: '#000', fontWeight: '600', marginBottom: '8px' }}>Precision Focus</h4>
+                  <p style={{ color: '#111', fontSize: '0.875rem' }}>Targeted threat elimination</p>
                 </div>
               </div>
             </div>
@@ -296,17 +294,15 @@ const About = () => {
       {/* Why We Exist Section */}
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
-            Why We Exist
-          </h2>
+          <h2>Why We Exist</h2>
           <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
             <div style={{
-              background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(249, 115, 22, 0.2))',
+              background: '#e6f2ff',
               borderRadius: '24px',
               padding: '32px',
               border: '1px solid rgba(239, 68, 68, 0.3)'
             }}>
-              <p style={{ color: '#e5e7eb', fontSize: '1.125rem', lineHeight: '1.6' }}>
+              <p style={{ color: '#111', fontSize: '1.125rem', lineHeight: '1.6' }}>
                 SafeNet was born out of a growing concern for the rise in cybercrime targeting individuals and 
                 small businesses. We believe that security tools shouldn't be complicated, expensive, or resource-heavy. 
                 Our approach focuses on accessibility, ease of use, and intelligent automation that adapts as threats evolve.
@@ -319,10 +315,8 @@ const About = () => {
       {/* Values Section */}
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
-            Our Values
-          </h2>
-          <p style={{ color: '#d1d5db', fontSize: '1.125rem', maxWidth: '512px', margin: '0 auto' }}>
+          <h2>Our Values</h2>
+          <p style={{ color: '#111', fontSize: '1.125rem', maxWidth: '512px', margin: '0 auto' }}>
             These principles guide everything we do, from product development to customer support.
           </p>
         </div>
@@ -332,14 +326,14 @@ const About = () => {
             onMouseEnter={(e) => {
               const card = e.currentTarget.querySelector('.value-card');
               if (card) {
-                card.style.background = 'rgba(255, 255, 255, 0.15)';
+                card.style.background = '#e6f2ff';
                 card.style.transform = 'translateY(-4px)';
               }
             }}
             onMouseLeave={(e) => {
               const card = e.currentTarget.querySelector('.value-card');
               if (card) {
-                card.style.background = 'rgba(255, 255, 255, 0.1)';
+                card.style.background = '#e6f2ff';
                 card.style.transform = 'translateY(0)';
               }
             }}>
@@ -359,10 +353,10 @@ const About = () => {
                 }}>
                   <div style={{ color: 'white' }}>{value.icon}</div>
                 </div>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'white', marginBottom: '16px' }}>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#000', marginBottom: '16px' }}>
                   {value.title}
                 </h3>
-                <p style={{ color: '#d1d5db', lineHeight: '1.6' }}>
+                <p style={{ color: '#111', lineHeight: '1.6' }}>
                   {value.description}
                 </p>
               </div>
@@ -374,10 +368,8 @@ const About = () => {
       {/* Team Section */}
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px 80px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
-            Our Expert Team
-          </h2>
-          <p style={{ color: '#d1d5db', fontSize: '1.125rem', maxWidth: '512px', margin: '0 auto' }}>
+          <h2>Our Expert Team</h2>
+          <p style={{ color: '#111', fontSize: '1.125rem', maxWidth: '512px', margin: '0 auto' }}>
             A diverse group of cybersecurity professionals dedicated to your digital safety.
           </p>
         </div>
@@ -389,23 +381,23 @@ const About = () => {
               cursor: 'pointer'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              e.currentTarget.style.background = '#e6f2ff';
               e.currentTarget.style.transform = 'translateY(-4px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.background = '#e6f2ff';
               e.currentTarget.style.transform = 'translateY(0)';
             }}>
               <div style={{ color: '#60a5fa', marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
                 {team.icon}
               </div>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white', marginBottom: '8px' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#000', marginBottom: '8px' }}>
                 {team.count}
               </div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: 'white', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#000', marginBottom: '12px' }}>
                 {team.role}
               </h3>
-              <p style={{ color: '#d1d5db' }}>{team.description}</p>
+              <p style={{ color: '#111' }}>{team.description}</p>
             </div>
           ))}
         </div>
@@ -417,17 +409,18 @@ const About = () => {
           <div style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(147, 51, 234, 0.2))',
+            background: '#e6f2ff',
             borderRadius: '24px',
             filter: 'blur(40px)'
           }}></div>
           <div style={{
             position: 'relative',
-            background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8))',
+            background: '#e6f2ff',
             borderRadius: '24px',
             padding: '48px',
             backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)'
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            cursor: 'pointer'
           }}>
             <div style={{ textAlign: 'center', marginBottom: '32px' }}>
               <div style={{
@@ -437,29 +430,27 @@ const About = () => {
                 width: '64px',
                 height: '64px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                background: '#e6f2ff',
                 marginBottom: '24px'
               }}>
                 <TrendingUp size={32} color="white" />
               </div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
-                Looking Ahead
-              </h2>
+              <h2>Looking Ahead</h2>
             </div>
             <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
-              <p style={{ color: '#e5e7eb', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '32px', textAlign: 'center' }}>
+              <p style={{ color: '#111', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '32px', textAlign: 'center' }}>
                 As threats become more sophisticated, so do we. We're continuously upgrading our detection engines, 
                 introducing AI-based monitoring, and building tools that empower users to take control of their 
                 cybersecurity with confidence.
               </p>
               <div style={{
-                background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2))',
+                background: '#e6f2ff',
                 borderRadius: '16px',
                 padding: '24px',
                 border: '1px solid rgba(59, 130, 246, 0.3)',
                 textAlign: 'center'
               }}>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'white', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#000', marginBottom: '12px' }}>
                   SafeNet is more than just an antivirus — it's your digital defense partner.
                 </h3>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
