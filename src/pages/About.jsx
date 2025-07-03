@@ -59,7 +59,7 @@ const About = () => {
 
   const containerStyle = {
     minHeight: '100vh',
-    background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%)',
+    background: 'linear-gradient(135deg,rgb(88, 119, 190) 0%,rgb(101, 118, 163) 50%,rgb(88, 123, 203) 100%)',
     fontFamily: 'system-ui, -apple-system, sans-serif'
   };
 

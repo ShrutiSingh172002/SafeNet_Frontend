@@ -9,6 +9,7 @@ const Navbar = () => {
         <Link to="/" className="logo">SafeNet</Link>
       </div>
       <div className="navbar-right">
+        <Link to="/" className="nav-link">Home</Link> {/* ✅ Added Home link */}
         <Link to="/about" className="nav-link">About Us</Link>
         <Link to="/blog" className="nav-link">Blog</Link>
         <Link to="/contact" className="nav-link">Contact Us</Link>
