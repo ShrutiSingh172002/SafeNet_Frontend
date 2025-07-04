@@ -27,20 +27,20 @@ const Home = () => {
     <div className="home-page">
       {/* ✅ Meta Tags */}
       <Helmet>
-        <title>SafeNetCare | Antivirus & Cybersecurity Solutions</title>
+        <title>Secure Software Solutions|safenetcare.online</title>
         <meta
           name="description"
           content="Safenetcare.online is a trusted software provider offering advanced antivirus solutions and secure digital tools tailored to meet the unique needs of businesses across various industries. With a focus on performance, reliability, and innovation, Safenetcare delivers cutting-edge protection and customized cybersecurity solutions."
         />
         <meta
           name="keywords"
-          content="Safenetcare.online – Our Antivirus Solutions | Secure Software tools | Antivirus Software Gurugram | Window Antivirus Services| Mac Antivirus Services| iOS Protection Services"
+          content="Best Software Solutions Gurugram, Our Antivirus Software Solutions, Window Antivirus Services, Mac Antivirus Services, Android Security, iOS Protection Service, Best Enterprise Security, Web Protection, Firewall & VPN Services, Email Protection, SecureTech Solutions, Smart Secure Systems, CodeShield Experts, NextGen Software Security, Trusted App Defense, Cyber-Safe Code, SecureCode Lab, Digital Armor Solutions, SafeSoft Engineers, Fortified Software."
         />
       </Helmet>
 
       {/* Hero Section */}
       <section className="hero">
-        <h1 className="heading-blue">NextGen Secure Software for Smart Enterprises</h1>
+        <h1 className="heading-blue">Securing Your Digital World</h1>
         <p className="text-black">
           Safenetcare.online is a trusted software provider offering advanced antivirus solutions and secure digital tools tailored to meet the unique needs of businesses across various industries.
         </p>
@@ -64,6 +64,13 @@ const Home = () => {
           ))}
         </div>
       </section>
+      <section className="protection-image-section" style={{ textAlign: 'center', margin: '2rem 0' }}>
+  <img
+    src={servicesImage}
+    alt="Device Protection"
+    style={{ maxWidth: '800px', width: '100%', height: '100%', borderRadius: '12px', boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }}
+  />
+</section>
 
       {/* Why Choose SafeNet Section */}
       <section className="why-choose-content">

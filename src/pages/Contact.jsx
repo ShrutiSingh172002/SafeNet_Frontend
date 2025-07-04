@@ -59,12 +59,9 @@ const Contact = () => {
               title: 'Business Hours',
               detail: 'Mon – Fri: 9:00 AM – 6:00 PM (EST)',
               note: 'Sat – Sun: Closed'
-            },
-            {
-              title: 'Corporate Office',
-              detail: 'Sector 95, Gurgaon',
-              note: 'Haryana, India'
             }
+
+            
           ].map((item, i) => (
             <div key={i} style={cardStyle}>
               <h3 style={{ color: '#0077cc' }}>{item.title}</h3>

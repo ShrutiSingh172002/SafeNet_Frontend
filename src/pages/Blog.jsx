@@ -88,7 +88,8 @@ const Blog = () => {
       <section className="blog-hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            SafeNet Security <span className="gradient-text">Intelligence Hub</span>
+            <span className="gradient-text">SafeNet Security Intelligence Hub
+              </span>
           </h1>
           <p className="hero-subtitle">
             Your gateway to cutting-edge cybersecurity insights, expert analysis, and real-world protection strategies. 

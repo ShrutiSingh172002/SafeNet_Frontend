@@ -81,18 +81,18 @@ section {
 }
 
 .why-choose-content {
-  max-width: 900px;         /* control max width */
-  margin: 40px auto;        /* center horizontally */
-  padding: 2rem 1rem;       /* some padding for breathing room */
+  max-width: 900px;         
+  margin: 40px auto;        
+  padding: 2rem 1rem;       
   display: flex;
-  flex-direction: column;   /* stack content vertically */
-  align-items: center;      /* center horizontally */
-  text-align: center;       /* center text inside */
-  gap: 1.5rem;              /* space between elements */
+  flex-direction: column;  
+  align-items: center;      
+  text-align: center;       
+  gap: 1.5rem;              
 }
 .why-choose-container {
   width: 100%;
-  max-width: 700px;         /* limit container width */
+  max-width: 700px;        
 }
 
 .why-left,
@@ -149,14 +149,14 @@ section {
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  /* Add these to ensure no other styles interfere */
+  
   display: block;
   flex-shrink: 0;
   transform: scale(1) !important;
   zoom: 1 !important;
 }
 
-/* Alternative approach - if the above doesn't work */
+
 .antivirus-images .image-container {
   width: 180px;
   height: 180px;
@@ -173,7 +173,7 @@ section {
   max-height: none !important;
 }
 
-/* ========== Specific Small Icon Image ========== */
+
 .protect-image {
   width: 100px !important;
   height: auto !important;
@@ -305,7 +305,7 @@ section {
 .why-features li {
   display: flex;
   align-items: center;
-  justify-content: center; /* ✅ Centers icon + text inside each <li> */
+  justify-content: center; 
   gap: 0.75rem;
   font-size: 1.05rem;
   line-height: 1.6;

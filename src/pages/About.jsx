@@ -59,7 +59,7 @@ const About = () => {
 
   const containerStyle = {
     minHeight: '100vh',
-    background: 'linear-gradient(135deg,rgb(88, 119, 190) 0%,rgb(101, 118, 163) 50%,rgb(88, 123, 203) 100%)',
+    background: 'linear-gradient(135deg,rgb(135, 161, 228) 0%,rgb(93, 112, 164) 50%,rgb(108, 136, 201) 100%)',
     fontFamily: 'system-ui, -apple-system, sans-serif'
   };
 
@@ -78,7 +78,6 @@ const About = () => {
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text'
   };
-
   return (
     <div style={containerStyle}>
       {/* Hero Section */}
@@ -103,7 +102,7 @@ const About = () => {
               width: '80px',
               height: '80px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+              background: 'linear-gradient(135deg,rgb(96, 130, 185),rgb(92, 190, 246))',
               marginBottom: '32px'
             }}>
               <Shield size={40} color="white" />
@@ -115,7 +114,7 @@ const About = () => {
               marginBottom: '24px',
               lineHeight: '1.1'
             }}>
-              About <span style={gradientTextStyle}>SafeNet</span>
+              About <span style={gradientTextStyle}></span>SafeNet
             </h1>
             <p style={{
               fontSize: '1.25rem',
@@ -301,7 +300,7 @@ const About = () => {
           </h2>
           <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
             <div style={{
-              background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(249, 115, 22, 0.2))',
+              background: 'linear-gradient(135deg, rgba(64, 74, 216, 0.91), rgba(46, 31, 181, 0.9))',
               borderRadius: '24px',
               padding: '32px',
               border: '1px solid rgba(239, 68, 68, 0.3)'

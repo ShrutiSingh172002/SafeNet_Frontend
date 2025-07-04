@@ -71,7 +71,7 @@ const Refund = () => {
 
       <h3 style={{ color: '#005ea6', marginTop: '30px' }}>How to Request a Refund</h3>
       <p>
-        To initiate a refund, please contact our support team at <strong>support@safenet.com</strong> and include the following:
+        To initiate a refund, please contact our support team at <strong>info@safenet.com</strong> and include the following:
       </p>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {[
