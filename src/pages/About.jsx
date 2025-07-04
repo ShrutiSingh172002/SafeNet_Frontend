@@ -59,40 +59,109 @@ const About = () => {
 
   const containerStyle = {
     minHeight: '100vh',
-    background: 'linear-gradient(135deg,rgb(135, 161, 228) 0%,rgb(93, 112, 164) 50%,rgb(108, 136, 201) 100%)',
+    backgroundColor: '#e6f2ff',
     fontFamily: 'system-ui, -apple-system, sans-serif'
   };
 
   const cardStyle = {
-    background: 'rgba(255, 255, 255, 0.1)',
-    backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.2)',
+    backgroundColor: '#2563eb',
+    boxShadow: '0 8px 25px rgba(37, 99, 235, 0.25)',
     borderRadius: '16px',
     padding: '24px',
-    transition: 'all 0.3s ease'
+    transition: 'all 0.3s ease',
+    border: '1px solid rgba(255, 255, 255, 0.1)'
   };
 
-  const gradientTextStyle = {
-    background: 'linear-gradient(135deg, #60a5fa, #a855f7)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text'
+  const responsiveClasses = {
+    hero: {
+      padding: '40px 16px 32px',
+      '@media (min-width: 768px)': {
+        padding: '80px 24px 64px'
+      }
+    },
+    heroTitle: {
+      fontSize: '2rem',
+      '@media (min-width: 768px)': {
+        fontSize: '3rem'
+      },
+      '@media (min-width: 1024px)': {
+        fontSize: '4rem'
+      }
+    },
+    heroDescription: {
+      fontSize: '1rem',
+      '@media (min-width: 768px)': {
+        fontSize: '1.125rem'
+      },
+      '@media (min-width: 1024px)': {
+        fontSize: '1.25rem'
+      }
+    },
+    statsGrid: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      gap: '16px',
+      '@media (min-width: 768px)': {
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '24px'
+      }
+    },
+    missionGrid: {
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      gap: '32px',
+      '@media (min-width: 768px)': {
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gap: '48px'
+      }
+    },
+    valuesGrid: {
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      gap: '24px',
+      '@media (min-width: 768px)': {
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gap: '32px'
+      },
+      '@media (min-width: 1024px)': {
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'
+      }
+    },
+    teamGrid: {
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      gap: '24px',
+      '@media (min-width: 768px)': {
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gap: '32px'
+      },
+      '@media (min-width: 1024px)': {
+        gridTemplateColumns: 'repeat(3, 1fr)'
+      }
+    },
+    padding: {
+      padding: '0 16px',
+      '@media (min-width: 768px)': {
+        padding: '0 24px'
+      }
+    },
+    sectionSpacing: {
+      marginBottom: '40px',
+      '@media (min-width: 768px)': {
+        marginBottom: '80px'
+      }
+    }
   };
+
   return (
     <div style={containerStyle}>
       {/* Hero Section */}
       <div style={{ position: 'relative', overflow: 'hidden' }}>
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(90deg, rgba(37, 99, 235, 0.2), rgba(147, 51, 234, 0.2))'
-        }}></div>
-        
         <div style={{ 
           position: 'relative', 
           maxWidth: '1280px', 
           margin: '0 auto', 
-          padding: '80px 24px 64px' 
+          padding: '40px 16px 32px'
         }}>
           <div style={{ textAlign: 'center' }}>
             <div style={{
@@ -102,23 +171,23 @@ const About = () => {
               width: '80px',
               height: '80px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg,rgb(96, 130, 185),rgb(92, 190, 246))',
+              backgroundColor: '#3b82f6',
               marginBottom: '32px'
             }}>
-              <Shield size={40} color="white" />
+              <Shield size={40} color="black" />
             </div>
             <h1 style={{
-              fontSize: '4rem',
+              fontSize: window.innerWidth >= 1024 ? '4rem' : window.innerWidth >= 768 ? '3rem' : '2rem',
               fontWeight: 'bold',
-              color: 'white',
+              color: 'black',
               marginBottom: '24px',
               lineHeight: '1.1'
             }}>
-              About <span style={gradientTextStyle}></span>SafeNet
+              About SafeNet
             </h1>
             <p style={{
-              fontSize: '1.25rem',
-              color: '#d1d5db',
+              fontSize: window.innerWidth >= 1024 ? '1.25rem' : window.innerWidth >= 768 ? '1.125rem' : '1rem',
+              color: 'black',
               maxWidth: '768px',
               margin: '0 auto',
               lineHeight: '1.6'
@@ -135,13 +204,13 @@ const About = () => {
         position: 'relative', 
         marginTop: '-32px', 
         maxWidth: '1280px', 
-        margin: '-32px auto 80px', 
-        padding: '0 24px' 
+        margin: '-32px auto 40px', 
+        padding: '0 16px'
       }}>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-          gap: '24px' 
+          gridTemplateColumns: window.innerWidth >= 768 ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)',
+          gap: window.innerWidth >= 768 ? '24px' : '16px'
         }}>
           {stats.map((stat, index) => (
             <div key={index} style={{
@@ -150,12 +219,14 @@ const About = () => {
               cursor: 'pointer'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              e.currentTarget.style.backgroundColor = '#1d4ed8';
               e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 12px 35px rgba(37, 99, 235, 0.4)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.backgroundColor = '#2563eb';
               e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 8px 25px rgba(37, 99, 235, 0.25)';
             }}>
               <div style={{ color: '#60a5fa', marginBottom: '8px', display: 'flex', justifyContent: 'center' }}>
                 {stat.icon}
@@ -163,7 +234,7 @@ const About = () => {
               <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white', marginBottom: '4px' }}>
                 {stat.number}
               </div>
-              <div style={{ color: '#d1d5db', fontSize: '0.875rem' }}>
+              <div style={{ color: 'white', fontSize: '0.875rem' }}>
                 {stat.label}
               </div>
             </div>
@@ -172,53 +243,47 @@ const About = () => {
       </div>
 
       {/* Mission Section */}
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px 80px' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px 40px' }}>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
-          gap: '48px', 
+          gridTemplateColumns: window.innerWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
+          gap: window.innerWidth >= 768 ? '48px' : '32px',
           alignItems: 'center' 
         }}>
           <div>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'black', marginBottom: '24px' }}>
               Our Mission
             </h2>
-            <p style={{ color: '#d1d5db', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '24px' }}>
+            <p style={{ color: 'black', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '24px' }}>
               We are a dedicated team of cybersecurity experts, developers, and researchers focused on building 
               innovative antivirus solutions that are fast, lightweight, and incredibly effective.
             </p>
-            <p style={{ color: '#d1d5db', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '32px' }}>
+            <p style={{ color: 'black', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '32px' }}>
               Whether you're a home user or a business, our tools are designed to detect and block malware, 
               ransomware, phishing attempts, and other digital threats before they reach you.
             </p>
             <div style={{
-              background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2))',
+              backgroundColor: '#1e40af',
               borderRadius: '16px',
               padding: '24px',
-              border: '1px solid rgba(59, 130, 246, 0.3)'
+              boxShadow: '0 8px 25px rgba(30, 64, 175, 0.25)',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
               <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'white', marginBottom: '12px' }}>
                 Our Simple Mission
               </h3>
-              <p style={{ color: '#e5e7eb', fontSize: '1.125rem' }}>
+              <p style={{ color: 'white', fontSize: '1.125rem' }}>
                 Protect what matters most — your identity, your data, and your peace of mind.
               </p>
             </div>
           </div>
           <div style={{ position: 'relative' }}>
             <div style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(147, 51, 234, 0.3))',
-              borderRadius: '24px',
-              filter: 'blur(40px)'
-            }}></div>
-            <div style={{
               position: 'relative',
-              background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8))',
+              backgroundColor: '#1e40af',
               borderRadius: '24px',
               padding: '32px',
-              backdropFilter: 'blur(10px)',
+              boxShadow: '0 12px 40px rgba(30, 64, 175, 0.3)',
               border: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
@@ -226,7 +291,7 @@ const About = () => {
                   <div style={{
                     width: '64px',
                     height: '64px',
-                    background: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+                    backgroundColor: '#3b82f6',
                     borderRadius: '16px',
                     display: 'flex',
                     alignItems: 'center',
@@ -236,13 +301,13 @@ const About = () => {
                     <Shield size={32} color="white" />
                   </div>
                   <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px' }}>Advanced Protection</h4>
-                  <p style={{ color: '#9ca3af', fontSize: '0.875rem' }}>AI-powered threat detection</p>
+                  <p style={{ color: 'white', fontSize: '0.875rem' }}>AI-powered threat detection</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
                     width: '64px',
                     height: '64px',
-                    background: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
+                    backgroundColor: '#8b5cf6',
                     borderRadius: '16px',
                     display: 'flex',
                     alignItems: 'center',
@@ -252,13 +317,13 @@ const About = () => {
                     <Zap size={32} color="white" />
                   </div>
                   <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px' }}>Lightning Fast</h4>
-                  <p style={{ color: '#9ca3af', fontSize: '0.875rem' }}>Minimal system impact</p>
+                  <p style={{ color: 'white', fontSize: '0.875rem' }}>Minimal system impact</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
                     width: '64px',
                     height: '64px',
-                    background: 'linear-gradient(135deg, #10b981, #059669)',
+                    backgroundColor: '#10b981',
                     borderRadius: '16px',
                     display: 'flex',
                     alignItems: 'center',
@@ -268,13 +333,13 @@ const About = () => {
                     <Users size={32} color="white" />
                   </div>
                   <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px' }}>User Friendly</h4>
-                  <p style={{ color: '#9ca3af', fontSize: '0.875rem' }}>Intuitive interface design</p>
+                  <p style={{ color: 'white', fontSize: '0.875rem' }}>Intuitive interface design</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
                     width: '64px',
                     height: '64px',
-                    background: 'linear-gradient(135deg, #f59e0b, #ef4444)',
+                    backgroundColor: '#f59e0b',
                     borderRadius: '16px',
                     display: 'flex',
                     alignItems: 'center',
@@ -284,7 +349,7 @@ const About = () => {
                     <Target size={32} color="white" />
                   </div>
                   <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px' }}>Precision Focus</h4>
-                  <p style={{ color: '#9ca3af', fontSize: '0.875rem' }}>Targeted threat elimination</p>
+                  <p style={{ color: 'white', fontSize: '0.875rem' }}>Targeted threat elimination</p>
                 </div>
               </div>
             </div>
@@ -293,19 +358,20 @@ const About = () => {
       </div>
 
       {/* Why We Exist Section */}
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px 80px' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px 40px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'black', marginBottom: '24px' }}>
             Why We Exist
           </h2>
           <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
             <div style={{
-              background: 'linear-gradient(135deg, rgba(64, 74, 216, 0.91), rgba(46, 31, 181, 0.9))',
+              backgroundColor: '#1e40af',
               borderRadius: '24px',
               padding: '32px',
-              border: '1px solid rgba(239, 68, 68, 0.3)'
+              boxShadow: '0 12px 40px rgba(30, 64, 175, 0.3)',
+              border: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
-              <p style={{ color: '#e5e7eb', fontSize: '1.125rem', lineHeight: '1.6' }}>
+              <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.6' }}>
                 SafeNet was born out of a growing concern for the rise in cybercrime targeting individuals and 
                 small businesses. We believe that security tools shouldn't be complicated, expensive, or resource-heavy. 
                 Our approach focuses on accessibility, ease of use, and intelligent automation that adapts as threats evolve.
@@ -316,30 +382,36 @@ const About = () => {
       </div>
 
       {/* Values Section */}
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px 80px' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px 40px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'black', marginBottom: '24px' }}>
             Our Values
           </h2>
-          <p style={{ color: '#d1d5db', fontSize: '1.125rem', maxWidth: '512px', margin: '0 auto' }}>
+          <p style={{ color: 'black', fontSize: '1.125rem', maxWidth: '512px', margin: '0 auto' }}>
             These principles guide everything we do, from product development to customer support.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: window.innerWidth >= 1024 ? 'repeat(auto-fit, minmax(300px, 1fr))' : window.innerWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
+          gap: window.innerWidth >= 768 ? '32px' : '24px'
+        }}>
           {values.map((value, index) => (
             <div key={index} style={{ position: 'relative', cursor: 'pointer' }}
             onMouseEnter={(e) => {
               const card = e.currentTarget.querySelector('.value-card');
               if (card) {
-                card.style.background = 'rgba(255, 255, 255, 0.15)';
+                card.style.backgroundColor = '#1d4ed8';
                 card.style.transform = 'translateY(-4px)';
+                card.style.boxShadow = '0 12px 35px rgba(37, 99, 235, 0.4)';
               }
             }}
             onMouseLeave={(e) => {
               const card = e.currentTarget.querySelector('.value-card');
               if (card) {
-                card.style.background = 'rgba(255, 255, 255, 0.1)';
+                card.style.backgroundColor = '#2563eb';
                 card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 8px 25px rgba(37, 99, 235, 0.25)';
               }
             }}>
               <div className="value-card" style={{
@@ -361,7 +433,7 @@ const About = () => {
                 <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'white', marginBottom: '16px' }}>
                   {value.title}
                 </h3>
-                <p style={{ color: '#d1d5db', lineHeight: '1.6' }}>
+                <p style={{ color: 'white', lineHeight: '1.6' }}>
                   {value.description}
                 </p>
               </div>
@@ -371,16 +443,20 @@ const About = () => {
       </div>
 
       {/* Team Section */}
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px 80px' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px 40px' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'black', marginBottom: '24px' }}>
             Our Expert Team
           </h2>
-          <p style={{ color: '#d1d5db', fontSize: '1.125rem', maxWidth: '512px', margin: '0 auto' }}>
+          <p style={{ color: 'black', fontSize: '1.125rem', maxWidth: '512px', margin: '0 auto' }}>
             A diverse group of cybersecurity professionals dedicated to your digital safety.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '32px' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: window.innerWidth >= 1024 ? 'repeat(3, 1fr)' : window.innerWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
+          gap: window.innerWidth >= 768 ? '32px' : '24px'
+        }}>
           {teamHighlights.map((team, index) => (
             <div key={index} style={{
               ...cardStyle,
@@ -388,12 +464,14 @@ const About = () => {
               cursor: 'pointer'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              e.currentTarget.style.backgroundColor = '#1d4ed8';
               e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 12px 35px rgba(37, 99, 235, 0.4)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+              e.currentTarget.style.backgroundColor = '#2563eb';
               e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 8px 25px rgba(37, 99, 235, 0.25)';
             }}>
               <div style={{ color: '#60a5fa', marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
                 {team.icon}
@@ -404,28 +482,21 @@ const About = () => {
               <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: 'white', marginBottom: '12px' }}>
                 {team.role}
               </h3>
-              <p style={{ color: '#d1d5db' }}>{team.description}</p>
+              <p style={{ color: 'white' }}>{team.description}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Looking Ahead Section */}
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px 80px' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px 40px' }}>
         <div style={{ position: 'relative' }}>
           <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(147, 51, 234, 0.2))',
-            borderRadius: '24px',
-            filter: 'blur(40px)'
-          }}></div>
-          <div style={{
             position: 'relative',
-            background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8))',
+            backgroundColor: '#1e40af',
             borderRadius: '24px',
-            padding: '48px',
-            backdropFilter: 'blur(10px)',
+            padding: window.innerWidth >= 768 ? '48px' : '32px',
+            boxShadow: '0 12px 40px rgba(30, 64, 175, 0.3)',
             border: '1px solid rgba(255, 255, 255, 0.1)'
           }}>
             <div style={{ textAlign: 'center', marginBottom: '32px' }}>
@@ -436,7 +507,7 @@ const About = () => {
                 width: '64px',
                 height: '64px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                backgroundColor: '#3b82f6',
                 marginBottom: '24px'
               }}>
                 <TrendingUp size={32} color="white" />
@@ -446,16 +517,17 @@ const About = () => {
               </h2>
             </div>
             <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
-              <p style={{ color: '#e5e7eb', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '32px', textAlign: 'center' }}>
+              <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '32px', textAlign: 'center' }}>
                 As threats become more sophisticated, so do we. We're continuously upgrading our detection engines, 
                 introducing AI-based monitoring, and building tools that empower users to take control of their 
                 cybersecurity with confidence.
               </p>
               <div style={{
-                background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2))',
+                backgroundColor: '#2563eb',
                 borderRadius: '16px',
                 padding: '24px',
-                border: '1px solid rgba(59, 130, 246, 0.3)',
+                boxShadow: '0 8px 25px rgba(37, 99, 235, 0.25)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
                 textAlign: 'center'
               }}>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'white', marginBottom: '12px' }}>

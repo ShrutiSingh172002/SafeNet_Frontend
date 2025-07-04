@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
+import { useResponsive } from '../hooks/useResponsive';
 
 const Contact = () => {
+  const { isMobile, isTablet } = useResponsive();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -8,41 +11,122 @@ const Contact = () => {
   const cardStyle = {
     background: '#f0faff',
     border: '1px solid #b3e5fc',
-    borderRadius: '8px',
-    padding: '20px',
+    borderRadius: isMobile ? '6px' : '8px',
+    padding: isMobile ? '16px' : '20px',
     color: '#003366',
     boxShadow: '0 4px 12px rgba(0, 102, 204, 0.1)',
     transition: 'transform 0.3s ease',
-    flex: '1 1 250px',
-    margin: '10px',
+    flex: isMobile ? '1 1 100%' : isTablet ? '1 1 45%' : '1 1 250px',
+    margin: isMobile ? '8px 0' : '10px',
+    fontSize: isMobile ? '14px' : '16px',
   };
 
   const sectionHeading = {
     color: '#ffffff',
-    fontSize: '2.8rem',
+    fontSize: isMobile ? '2rem' : isTablet ? '2.4rem' : '2.8rem',
     fontWeight: '700',
-    marginBottom: '20px',
+    marginBottom: isMobile ? '16px' : '20px',
     textAlign: 'center',
+    lineHeight: '1.2',
+  };
+
+  const heroStyle = {
+    background: 'linear-gradient(135deg, #8fd3f4, #1e90ff)',
+    color: '#ffffff',
+    padding: isMobile ? '40px 16px' : isTablet ? '50px 20px' : '60px 20px',
+    textAlign: 'center',
+  };
+
+  const heroSubtextStyle = {
+    fontSize: isMobile ? '1rem' : '1.2rem',
+    maxWidth: '800px',
+    margin: '0 auto',
+    color: '#e6f7ff',
+    lineHeight: '1.5',
+  };
+
+  const gridContainerStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: isMobile ? '0' : '10px',
+  };
+
+  const formContainerStyle = {
+    background: '#e6f4fc',
+    padding: isMobile ? '20px 16px' : '30px',
+    borderRadius: isMobile ? '8px' : '10px',
+    maxWidth: '600px',
+    margin: isMobile ? '30px auto' : '40px auto',
+    boxShadow: '0 4px 12px rgba(0, 102, 204, 0.1)',
+    width: isMobile ? '95%' : 'auto',
+    boxSizing: 'border-box',
+  };
+
+  const inputStyle = {
+    width: '100%',
+    padding: isMobile ? '8px' : '10px',
+    borderRadius: '6px',
+    border: '1px solid #aadfff',
+    fontSize: isMobile ? '14px' : '16px',
+    boxSizing: 'border-box',
+  };
+
+  const labelStyle = {
+    display: 'block',
+    marginBottom: '5px',
+    color: '#003366',
+    fontSize: isMobile ? '14px' : '16px',
+    fontWeight: '500',
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#00aaff',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '6px',
+    padding: isMobile ? '10px 20px' : '12px 24px',
+    cursor: 'pointer',
+    fontSize: isMobile ? '14px' : '1rem',
+    width: '100%',
+    transition: 'background-color 0.3s ease',
+  };
+
+  const ctaStyle = {
+    background: 'linear-gradient(to right, #6dd5ed, #2193b0)',
+    color: '#ffffff',
+    padding: isMobile ? '30px 16px' : '40px 20px',
+    textAlign: 'center',
+    borderRadius: isMobile ? '8px' : '10px',
+    marginTop: isMobile ? '30px' : '40px',
+  };
+
+  const ctaButtonStyle = {
+    backgroundColor: '#ffffff',
+    color: '#0077cc',
+    padding: isMobile ? '8px 16px' : '10px 20px',
+    margin: isMobile ? '5px' : '0 10px 0 0',
+    borderRadius: '6px',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    fontSize: isMobile ? '14px' : '16px',
+    display: isMobile ? 'block' : 'inline-block',
+    marginBottom: isMobile ? '10px' : '0',
   };
 
   return (
     <div style={{ fontFamily: 'Segoe UI, sans-serif' }}>
       {/* Hero Section */}
-      <div style={{
-        background: 'linear-gradient(135deg, #8fd3f4, #1e90ff)',
-        color: '#ffffff',
-        padding: '60px 20px',
-        textAlign: 'center'
-      }}>
+      <div style={heroStyle}>
         <h1 style={sectionHeading}>Contact Us</h1>
-        <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', color: '#e6f7ff' }}>
+        <p style={heroSubtextStyle}>
           We're here to help! Whether you have questions about our antivirus products, need technical assistance, or want to share feedback, feel free to get in touch with our support team.
         </p>
       </div>
 
       {/* Grid Section */}
-      <div style={{ padding: '40px 20px' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <div style={{ padding: isMobile ? '30px 16px' : '40px 20px' }}>
+        <div style={gridContainerStyle}>
           {/* Contact Info Cards */}
           {[
             {
@@ -52,7 +136,7 @@ const Contact = () => {
             },
             {
               title: 'Phone Support',
-              detail: '+1 (877) 593-3790',
+              detail: '+1(833)573-2428',
               note: 'Toll-Free'
             },
             {
@@ -60,53 +144,57 @@ const Contact = () => {
               detail: 'Mon – Fri: 9:00 AM – 6:00 PM (EST)',
               note: 'Sat – Sun: Closed'
             }
-
-            
           ].map((item, i) => (
             <div key={i} style={cardStyle}>
-              <h3 style={{ color: '#0077cc' }}>{item.title}</h3>
-              <p><strong>{item.detail}</strong></p>
-              <span style={{ color: '#555' }}>{item.note}</span>
+              <h3 style={{ 
+                color: '#0077cc', 
+                fontSize: isMobile ? '16px' : '18px',
+                marginBottom: '10px'
+              }}>{item.title}</h3>
+              <p style={{ 
+                marginBottom: '8px',
+                fontSize: isMobile ? '14px' : '16px',
+                wordBreak: 'break-word'
+              }}>
+                <strong>{item.detail}</strong>
+              </p>
+              <span style={{ 
+                color: '#555', 
+                fontSize: isMobile ? '12px' : '14px' 
+              }}>{item.note}</span>
             </div>
           ))}
         </div>
 
         {/* Contact Form */}
-        <div style={{
-          background: '#e6f4fc',
-          padding: '30px',
-          borderRadius: '10px',
-          maxWidth: '600px',
-          margin: '40px auto',
-          boxShadow: '0 4px 12px rgba(0, 102, 204, 0.1)'
-        }}>
-          <h2 style={{ color: '#005ea6', marginBottom: '20px', textAlign: 'center' }}>Send us a Message</h2>
-          <form>
+        <div style={formContainerStyle}>
+          <h2 style={{ 
+            color: '#005ea6', 
+            marginBottom: '20px', 
+            textAlign: 'center',
+            fontSize: isMobile ? '1.5rem' : '1.8rem'
+          }}>Send us a Message</h2>
+          <div>
             {[
               { label: 'Full Name', type: 'text', name: 'name' },
               { label: 'Email Address', type: 'email', name: 'email' }
             ].map(({ label, type, name }) => (
               <div key={name} style={{ marginBottom: '15px' }}>
-                <label htmlFor={name} style={{ display: 'block', marginBottom: '5px', color: '#003366' }}>{label}</label>
-                <input type={type} id={name} name={name} required
-                  style={{
-                    width: '100%',
-                    padding: '10px',
-                    borderRadius: '6px',
-                    border: '1px solid #aadfff'
-                  }} />
+                <label style={labelStyle}>{label}</label>
+                <input 
+                  type={type} 
+                  name={name} 
+                  style={inputStyle}
+                />
               </div>
             ))}
 
             <div style={{ marginBottom: '15px' }}>
-              <label htmlFor="subject" style={{ display: 'block', marginBottom: '5px', color: '#003366' }}>Subject</label>
-              <select id="subject" name="subject" required
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  borderRadius: '6px',
-                  border: '1px solid #aadfff'
-                }}>
+              <label style={labelStyle}>Subject</label>
+              <select 
+                name="subject" 
+                style={inputStyle}
+              >
                 <option value="">Select a topic</option>
                 <option value="technical-support">Technical Support</option>
                 <option value="product-inquiry">Product Inquiry</option>
@@ -117,61 +205,53 @@ const Contact = () => {
             </div>
 
             <div style={{ marginBottom: '15px' }}>
-              <label htmlFor="message" style={{ display: 'block', marginBottom: '5px', color: '#003366' }}>Message</label>
-              <textarea id="message" name="message" rows="5" required
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  borderRadius: '6px',
-                  border: '1px solid #aadfff'
-                }}></textarea>
+              <label style={labelStyle}>Message</label>
+              <textarea 
+                name="message" 
+                rows={isMobile ? "4" : "5"} 
+                style={inputStyle}
+              ></textarea>
             </div>
 
-            <button type="submit"
-              style={{
-                backgroundColor: '#00aaff',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '6px',
-                padding: '12px 24px',
-                cursor: 'pointer',
-                fontSize: '1rem',
-                width: '100%'
-              }}>
+            <button 
+              style={buttonStyle}
+              onMouseOver={(e) => e.target.style.backgroundColor = '#0099dd'}
+              onMouseOut={(e) => e.target.style.backgroundColor = '#00aaff'}
+            >
               Send Message
             </button>
-          </form>
+          </div>
         </div>
 
         {/* CTA Section */}
-        <div style={{
-          background: 'linear-gradient(to right, #6dd5ed, #2193b0)',
-          color: '#ffffff',
-          padding: '40px 20px',
-          textAlign: 'center',
-          borderRadius: '10px',
-          marginTop: '40px'
-        }}>
-          <h2 style={{ fontSize: '2rem' }}>Your Security is Our Priority</h2>
-          <p>Reach out anytime — we're ready to assist you with all your cybersecurity needs.</p>
-          <div style={{ marginTop: '20px' }}>
-            <a href="tel:+18775933790" style={{
-              backgroundColor: '#ffffff',
-              color: '#0077cc',
-              padding: '10px 20px',
-              marginRight: '10px',
-              borderRadius: '6px',
-              textDecoration: 'none',
-              fontWeight: 'bold'
-            }}>Call Now</a>
+        <div style={ctaStyle}>
+          <h2 style={{ 
+            fontSize: isMobile ? '1.5rem' : '2rem',
+            marginBottom: '10px'
+          }}>Your Security is Our Priority</h2>
+          <p style={{ 
+            fontSize: isMobile ? '14px' : '16px',
+            marginBottom: '20px',
+            lineHeight: '1.5'
+          }}>
+            Reach out anytime — we're ready to assist you with all your cybersecurity needs.
+          </p>
+          <div style={{ 
+            marginTop: '20px',
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+            <a href="tel:+18775933790" style={ctaButtonStyle}>
+              Call Now
+            </a>
             <a href="mailto:info@safenetcare.online" style={{
-              backgroundColor: '#ffffff',
-              color: '#0077cc',
-              padding: '10px 20px',
-              borderRadius: '6px',
-              textDecoration: 'none',
-              fontWeight: 'bold'
-            }}>Send Email</a>
+              ...ctaButtonStyle,
+              margin: isMobile ? '0' : '0 0 0 10px'
+            }}>
+              Send Email
+            </a>
           </div>
         </div>
       </div>
