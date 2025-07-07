@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useResponsive } from '../hooks/useResponsive';
 
 const Refund = () => {
   const { isMobile, isTablet } = useResponsive();
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   const listItemStyle = {
     marginBottom: isMobile ? '6px' : '8px',

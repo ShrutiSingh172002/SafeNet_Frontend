@@ -1,12 +1,57 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useResponsive } from '../hooks/useResponsive';
 
 const Contact = () => {
   const { isMobile, isTablet } = useResponsive();
 
+  // Form state management
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission (replace with actual API call)
+    setTimeout(() => {
+      setShowSuccess(true);
+      setIsSubmitting(false);
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 5000);
+    }, 1000);
+  };
 
   const cardStyle = {
     background: '#f0faff',
@@ -174,7 +219,25 @@ const Contact = () => {
             textAlign: 'center',
             fontSize: isMobile ? '1.5rem' : '1.8rem'
           }}>Send us a Message</h2>
-          <div>
+          
+          {/* Success Message */}
+          {showSuccess && (
+            <div style={{
+              backgroundColor: '#d4edda',
+              color: '#155724',
+              padding: '15px',
+              borderRadius: '8px',
+              border: '1px solid #c3e6cb',
+              marginBottom: '20px',
+              textAlign: 'center',
+              fontSize: '16px',
+              fontWeight: '500'
+            }}>
+              🎉 Thank you for contacting us! We'll get back to you soon.
+            </div>
+          )}
+          
+          <form onSubmit={handleSubmit}>
             {[
               { label: 'Full Name', type: 'text', name: 'name' },
               { label: 'Email Address', type: 'email', name: 'email' }
@@ -184,7 +247,10 @@ const Contact = () => {
                 <input 
                   type={type} 
                   name={name} 
+                  value={formData[name]}
+                  onChange={handleInputChange}
                   style={inputStyle}
+                  required
                 />
               </div>
             ))}
@@ -193,7 +259,10 @@ const Contact = () => {
               <label style={labelStyle}>Subject</label>
               <select 
                 name="subject" 
+                value={formData.subject}
+                onChange={handleInputChange}
                 style={inputStyle}
+                required
               >
                 <option value="">Select a topic</option>
                 <option value="technical-support">Technical Support</option>
@@ -209,18 +278,36 @@ const Contact = () => {
               <textarea 
                 name="message" 
                 rows={isMobile ? "4" : "5"} 
+                value={formData.message}
+                onChange={handleInputChange}
                 style={inputStyle}
+                required
               ></textarea>
             </div>
 
             <button 
-              style={buttonStyle}
-              onMouseOver={(e) => e.target.style.backgroundColor = '#0099dd'}
-              onMouseOut={(e) => e.target.style.backgroundColor = '#00aaff'}
+              type="submit"
+              disabled={isSubmitting}
+              style={{
+                ...buttonStyle,
+                backgroundColor: isSubmitting ? '#ccc' : '#00aaff',
+                cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                opacity: isSubmitting ? 0.7 : 1
+              }}
+              onMouseOver={(e) => {
+                if (!isSubmitting) {
+                  e.target.style.backgroundColor = '#0099dd';
+                }
+              }}
+              onMouseOut={(e) => {
+                if (!isSubmitting) {
+                  e.target.style.backgroundColor = '#00aaff';
+                }
+              }}
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
-          </div>
+          </form>
         </div>
 
         {/* CTA Section */}

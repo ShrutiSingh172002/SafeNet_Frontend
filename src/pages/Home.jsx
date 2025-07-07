@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { CheckCircle, Monitor, Smartphone, Apple, Building, Globe, Lock, Mail } from 'lucide-react';
 import './Home.css';
-import servicesImage from '../assets/protect-img.jpg'; // Replace with your actual image name
+import servicesImage from '../assets/protect-img.jpg';
 import { useResponsive } from '../hooks/useResponsive';
 
 const services = [
@@ -55,9 +55,16 @@ const Home = () => {
         whyChoose: { padding: '1.5rem 0' },
         cta: { padding: '2rem 0' },
         button: { 
-          padding: '0.8rem 1.5rem',
+          padding: '0.75rem 1.25rem',
           fontSize: '0.9rem',
-          marginTop: '1rem'
+          marginTop: '1rem',
+          display: 'inline-block',
+          textDecoration: 'none',
+          borderRadius: '6px',
+          minWidth: 'auto',
+          width: 'auto',
+          maxWidth: '200px',
+          textAlign: 'center'
         }
       };
     } else if (isTablet) {
@@ -90,7 +97,10 @@ const Home = () => {
         button: { 
           padding: '1rem 2rem',
           fontSize: '1rem',
-          marginTop: '1.5rem'
+          marginTop: '1.5rem',
+          display: 'inline-block',
+          textDecoration: 'none',
+          borderRadius: '8px'
         }
       };
     } else {
@@ -124,7 +134,10 @@ const Home = () => {
         button: { 
           padding: '1.2rem 2.5rem',
           fontSize: '1.1rem',
-          marginTop: '2rem'
+          marginTop: '2rem',
+          display: 'inline-block',
+          textDecoration: 'none',
+          borderRadius: '10px'
         }
       };
     }

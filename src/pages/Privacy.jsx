@@ -8,6 +8,8 @@ const Privacy = () => {
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
   }, []);
 
   const listItemStyle = {

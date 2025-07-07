@@ -4,6 +4,9 @@ const Terms = () => {
   const [screenSize, setScreenSize] = useState('desktop');
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         setScreenSize('mobile');

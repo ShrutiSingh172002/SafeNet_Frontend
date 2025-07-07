@@ -23,3 +23,170 @@ body {
   background-color: white;
   text-align: center;
 }
+
+/* ================================ */
+/* NAVBAR STYLES - Added for mobile navigation fix */
+/* ================================ */
+
+/* Navbar Base Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2d6cdf;
+  color: white;
+  position: relative;
+  z-index: 1001;
+}
+
+.navbar-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hamburger Menu - Hidden by default */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-menu:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .hamburger-menu {
+    display: block !important;
+  }
+  
+  .navbar-right {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #E0F4FF; /* Light sky blue background */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4rem 2rem 2rem 2rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .navbar-right-mobile {
+    right: 0 !important;
+  }
+  
+  .navbar-right .nav-link {
+    color: #1e3a8a; /* Dark blue headings */
+    margin: 0;
+    padding: 1rem 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(30, 58, 138, 0.2);
+    font-size: 1.1rem;
+    font-weight: 600; /* Make headings slightly bolder */
+  }
+  
+  .navbar-right .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #1e3a8a;
+    transform: translateX(5px); /* Slight animation on hover */
+  }
+  
+  .navbar-right .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  .mobile-menu-overlay {
+    display: block;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  
+  .navbar-right {
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.95rem;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  
+  .hamburger-menu {
+    display: none !important;
+  }
+  
+  .navbar-right {
+    display: flex;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    box-shadow: none;
+  }
+  
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
