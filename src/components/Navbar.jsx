@@ -37,6 +37,17 @@ const Navbar = () => {
           </button>
         )}
       </div>
+      
+      {/* Desktop center phone number */}
+      {!isMobile && (
+        <div className="navbar-phone-center">
+          <a href="tel:+18338600046" className="contact-number-link">
+            <FiPhone style={{ marginRight: '0.12em', verticalAlign: 'middle' }} />
+            <span style={{ verticalAlign: 'middle' }}>+1 (833) 860-0046</span>
+          </a>
+        </div>
+      )}
+      
       <div
         className={`navbar-main-items${isMobile ? ' mobile' : ''}${isMobile && isMenuOpen ? ' open' : ''}`}
         style={isMobile ? { display: isMenuOpen ? 'flex' : 'none' } : {}}
