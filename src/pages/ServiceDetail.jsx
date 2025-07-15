@@ -31,7 +31,7 @@ const serviceDetails = {
       "24/7 Priority Support with SLA Guarantee"
     ],
     pricing: "$9/year",
-    contact: { phone: "+1 (877) 593-3790", email: "info@safenetcare.online" },
+    contact: { phone: "+1(833)860-0046", email: "info@safenetcare.online" },
     image: windowsImg,
   },
   2: {
@@ -54,7 +54,7 @@ const serviceDetails = {
       "Expert macOS security support"
     ],
     pricing: "$14/year",
-    contact: { phone: "+1 (877) 593-3790", email: "info@safenetcare.online" },
+    contact: { phone: "+1(833)860-0046", email: "info@safenetcare.online" },
     image: macImg,
   },
   3: {
@@ -77,7 +77,7 @@ const serviceDetails = {
       "Privacy guard to secure sensitive data"
     ],
     pricing: "$8/year",
-    contact: { phone: "+1 (877) 593-3790", email: "info@safenetcare.online" },
+    contact: { phone: "+1(833)860-0046", email: "info@safenetcare.online" },
     image: androidImg,
   },
   4: {
@@ -99,7 +99,7 @@ const serviceDetails = {
       "iOS-dedicated customer support"
     ],
     pricing: "$10/year",
-    contact: { phone: "+1 (877) 593-3790", email: "info@safenetcare.online" },
+    contact: { phone: "+1(833)860-0046", email: "info@safenetcare.online" },
     image: iosImg,
   },
   5: {
@@ -122,7 +122,7 @@ const serviceDetails = {
       "24/7 Enterprise SLA Support & Dedicated Managers"
     ],
     pricing: "Custom Packages | Dedicated IT Support",
-    contact: { phone: "+1 (877) 593-3790", email: "info@safenetcare.online" },
+    contact: { phone: "+1(833)860-0046", email: "info@safenetcare.online" },
     image: enterpriseImg,
   },
   6: {
@@ -146,7 +146,7 @@ const serviceDetails = {
       "Compatible with all major browsers"
     ],
     pricing: "$6/year",
-    contact: { phone: "+1 (877) 593-3790", email: "info@safenetcare.online" },
+    contact: { phone: "+1(833)860-0046", email: "info@safenetcare.online" },
     image: webImg,
   },
   7: {
@@ -170,7 +170,7 @@ const serviceDetails = {
       "VPN Servers in 40+ Countries"
     ],
     pricing: "$18/year",
-    contact: { phone: "+1 (877) 593-3790", email: "info@safenetcare.online" },
+    contact: { phone: "+1(833)860-0046", email: "info@safenetcare.online" },
     image: vpnImg,
   },
   8: {
@@ -193,7 +193,7 @@ const serviceDetails = {
       "Protects against Business Email Compromise (BEC)"
     ],
     pricing: "$7/year",
-    contact: { phone: "+1 (877) 593-3790", email: "info@safenetcare.online" },
+    contact: { phone: "+1(833)860-0046", email: "info@safenetcare.online" },
     image: emailImg,
   },
 };

@@ -6,6 +6,7 @@ html:not(.disable-smooth-scroll) {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  padding-top: 40px; /* Match navbar height */
 }
 
 /* ========== Section Styles ========== */
@@ -24,6 +25,12 @@ body {
   text-align: center;
 }
 
+.home-section, .contact-section, .about-section, .blog-section, .terms-section, .privacy-section, .refund-section, .service-detail-section {
+  padding-top: 0;
+  margin-top: 0;
+  scroll-margin-top: 48px;
+}
+
 /* ================================ */
 /* NAVBAR STYLES - Added for mobile navigation fix */
 /* ================================ */
@@ -31,38 +38,79 @@ body {
 /* Navbar Base Styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  height: 40px;
+  padding: 0 1rem;
   background-color: #2d6cdf;
   color: white;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1001;
 }
 
-.navbar-left .logo {
-  font-size: 1.5rem;
+.navbar-main-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  flex: 1;
+  margin-left: 4vw;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+  display: none !important;
+}
+
+.logo {
+  font-size: 1.2rem;
   font-weight: bold;
   color: white;
   text-decoration: none;
-}
-
-.navbar-right {
+  margin-right: 1.2rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  height: 100%;
 }
 
 .nav-link {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s ease;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
   border-radius: 4px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-number-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  font-size: 1rem;
+  background: none;
+}
+
+.contact-number-link svg {
+  font-size: 1.1em;
+}
+
+.contact-number-link:hover {
+  color: #e0e7ff;
 }
 
 /* Hamburger Menu - Hidden by default */
@@ -70,12 +118,10 @@ body {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   color: white;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  margin-left: auto;
 }
 
 .hamburger-menu:hover {
@@ -101,7 +147,7 @@ body {
   }
   
   .hamburger-menu {
-    display: block !important;
+    display: block;
   }
   
   .navbar-right {
@@ -132,6 +178,8 @@ body {
     border-bottom: 1px solid rgba(30, 58, 138, 0.2);
     font-size: 1.1rem;
     font-weight: 600; /* Make headings slightly bolder */
+    padding-left: 0.5rem;
+    box-sizing: border-box;
   }
   
   .navbar-right .nav-link:hover {
@@ -146,6 +194,111 @@ body {
   
   .mobile-menu-overlay {
     display: block;
+  }
+  .contact-number-link {
+    color: #1e3a8a !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    background: none;
+    opacity: 1 !important;
+    margin: 0;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 1rem 0;
+    padding-left: 0.5rem;
+    margin-left: -0.6rem;
+    box-sizing: border-box;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(30, 58, 138, 0.2);
+  }
+  .contact-number-link:hover {
+    border: 1px solid #1e3a8a;
+    color: #2d6cdf;
+  }
+  .navbar-main-items.mobile {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    background: #2d6cdf;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+    z-index: 1003;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: none;
+  }
+  .navbar-main-items.mobile.open {
+    display: flex;
+  }
+  .navbar-main-items.mobile .nav-link {
+    font-size: 1.05rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: none;
+    text-align: left;
+  }
+  .navbar-main-items.mobile .nav-link:last-child {
+    border-bottom: none;
+  }
+  .navbar-main-items.mobile .contact-number-link {
+    color: #fff !important;
+  }
+  .navbar-mobile-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    background: #2d6cdf;
+    z-index: 1002;
+  }
+  .logo {
+    flex: 1;
+    font-size: 1rem;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  .mobile-center-phone {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    padding: 0.1rem 0.2rem;
+    min-width: 0;
+    color: #fff !important;
+    height: 40px;
+    background: none;
+    border: none;
+  }
+  .hamburger-menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    height: 40px;
   }
 }
 
@@ -189,4 +342,22 @@ body {
   .mobile-menu-overlay {
     display: none !important;
   }
+}
+
+.last-nav-link {
+  margin-right: 1.2rem;
+}
+
+.category-card {
+  background: #fff;
+  color: #222;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.10);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.category-card:hover {
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.18);
+  transform: translateY(-4px) scale(1.02);
 }

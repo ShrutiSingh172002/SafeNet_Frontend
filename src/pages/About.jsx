@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Shield, Users, Target, Zap, Eye, Lightbulb, CheckCircle, UserCheck, TrendingUp, Award, Lock, Globe } from 'lucide-react';
 
 const About = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const values = [
     {
       icon: <Eye size={32} />,
@@ -177,7 +185,7 @@ const About = () => {
               <Shield size={40} color="black" />
             </div>
             <h1 style={{
-              fontSize: window.innerWidth >= 1024 ? '4rem' : window.innerWidth >= 768 ? '3rem' : '2rem',
+              fontSize: screenWidth >= 1024 ? '4rem' : screenWidth >= 768 ? '3rem' : '2rem',
               fontWeight: 'bold',
               color: 'black',
               marginBottom: '24px',
@@ -186,7 +194,7 @@ const About = () => {
               About SafeNet
             </h1>
             <p style={{
-              fontSize: window.innerWidth >= 1024 ? '1.25rem' : window.innerWidth >= 768 ? '1.125rem' : '1rem',
+              fontSize: screenWidth >= 1024 ? '1.25rem' : screenWidth >= 768 ? '1.125rem' : '1rem',
               color: 'black',
               maxWidth: '768px',
               margin: '0 auto',
@@ -209,8 +217,8 @@ const About = () => {
       }}>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: window.innerWidth >= 768 ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)',
-          gap: window.innerWidth >= 768 ? '24px' : '16px'
+          gridTemplateColumns: screenWidth >= 768 ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)',
+          gap: screenWidth >= 768 ? '24px' : '16px'
         }}>
           {stats.map((stat, index) => (
             <div key={index} style={{
@@ -246,8 +254,8 @@ const About = () => {
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px 40px' }}>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: window.innerWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
-          gap: window.innerWidth >= 768 ? '48px' : '32px',
+          gridTemplateColumns: screenWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
+          gap: screenWidth >= 768 ? '48px' : '32px',
           alignItems: 'center' 
         }}>
           <div>
@@ -393,8 +401,8 @@ const About = () => {
         </div>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: window.innerWidth >= 1024 ? 'repeat(auto-fit, minmax(300px, 1fr))' : window.innerWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
-          gap: window.innerWidth >= 768 ? '32px' : '24px'
+          gridTemplateColumns: screenWidth >= 1024 ? 'repeat(auto-fit, minmax(300px, 1fr))' : screenWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
+          gap: screenWidth >= 768 ? '32px' : '24px'
         }}>
           {values.map((value, index) => (
             <div key={index} style={{ position: 'relative', cursor: 'pointer' }}
@@ -454,8 +462,8 @@ const About = () => {
         </div>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: window.innerWidth >= 1024 ? 'repeat(3, 1fr)' : window.innerWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
-          gap: window.innerWidth >= 768 ? '32px' : '24px'
+          gridTemplateColumns: screenWidth >= 1024 ? 'repeat(3, 1fr)' : screenWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
+          gap: screenWidth >= 768 ? '32px' : '24px'
         }}>
           {teamHighlights.map((team, index) => (
             <div key={index} style={{
@@ -495,7 +503,7 @@ const About = () => {
             position: 'relative',
             backgroundColor: '#1e40af',
             borderRadius: '24px',
-            padding: window.innerWidth >= 768 ? '48px' : '32px',
+            padding: screenWidth >= 768 ? '48px' : '32px',
             boxShadow: '0 12px 40px rgba(30, 64, 175, 0.3)',
             border: '1px solid rgba(255, 255, 255, 0.1)'
           }}>

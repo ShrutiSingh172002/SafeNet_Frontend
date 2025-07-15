@@ -364,7 +364,7 @@ const Terms = () => {
             <div style={styles.contactBox}>
               <p style={styles.highlightTitle}>SafeNet Legal Department</p>
               <p style={styles.text}>Email: <a href="mailto:info@safenetcare.online" style={styles.link}>info@safenetcare.online</a></p>
-              <p style={styles.text}>Phone: +1(833)573-2428</p>
+              <p style={styles.text}>Phone: +1(833)860-0046</p>
               
             </div>
           </section>

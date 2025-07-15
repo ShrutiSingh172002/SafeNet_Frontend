@@ -181,7 +181,7 @@ const Contact = () => {
             },
             {
               title: 'Phone Support',
-              detail: '+1(833)573-2428',
+              detail: '+1 (833) 860-0046',
               note: 'Toll-Free'
             },
             {
@@ -330,9 +330,7 @@ const Contact = () => {
             justifyContent: 'center',
             alignItems: 'center'
           }}>
-            <a href="tel:+18775933790" style={ctaButtonStyle}>
-              Call Now
-            </a>
+            <a href="tel:+18338600046" style={ctaButtonStyle}>+1 (833) 860-0046</a>
             <a href="mailto:info@safenetcare.online" style={{
               ...ctaButtonStyle,
               margin: isMobile ? '0' : '0 0 0 10px'
