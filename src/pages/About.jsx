@@ -161,6 +161,8 @@ const About = () => {
     }
   };
 
+  
+
   return (
     <div style={containerStyle}>
       {/* Hero Section */}
@@ -239,7 +241,7 @@ const About = () => {
               <div style={{ color: '#60a5fa', marginBottom: '8px', display: 'flex', justifyContent: 'center' }}>
                 {stat.icon}
               </div>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white', marginBottom: '4px' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#000', marginBottom: '4px' }}>
                 {stat.number}
               </div>
               <div style={{ color: 'white', fontSize: '0.875rem' }}>
@@ -277,7 +279,7 @@ const About = () => {
               boxShadow: '0 8px 25px rgba(30, 64, 175, 0.25)',
               border: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'white', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#000', marginBottom: '12px' }}>
                 Our Simple Mission
               </h3>
               <p style={{ color: 'white', fontSize: '1.125rem' }}>
@@ -438,7 +440,7 @@ const About = () => {
                 }}>
                   <div style={{ color: 'white' }}>{value.icon}</div>
                 </div>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'white', marginBottom: '16px' }}>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#000', marginBottom: '16px' }}>
                   {value.title}
                 </h3>
                 <p style={{ color: 'white', lineHeight: '1.6' }}>
@@ -484,10 +486,10 @@ const About = () => {
               <div style={{ color: '#60a5fa', marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
                 {team.icon}
               </div>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white', marginBottom: '8px' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#000', marginBottom: '8px' }}>
                 {team.count}
               </div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: 'white', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#000', marginBottom: '12px' }}>
                 {team.role}
               </h3>
               <p style={{ color: 'white' }}>{team.description}</p>
@@ -520,9 +522,7 @@ const About = () => {
               }}>
                 <TrendingUp size={32} color="white" />
               </div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '24px' }}>
-                Looking Ahead
-              </h2>
+              <h2>Looking Ahead</h2>
             </div>
             <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
               <p style={{ color: 'white', fontSize: '1.125rem', lineHeight: '1.6', marginBottom: '32px', textAlign: 'center' }}>
@@ -538,7 +538,7 @@ const About = () => {
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 textAlign: 'center'
               }}>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'white', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#000', marginBottom: '12px' }}>
                   SafeNet is more than just an antivirus — it's your digital defense partner.
                 </h3>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
