@@ -47,16 +47,23 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1001;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .navbar-main-items {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3.5rem;
+  gap: 2rem;
   flex: 1;
-  margin-left: 4vw;
+  margin-left: 2vw;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.navbar-main-items:not(.mobile) {
+  display: flex !important;
 }
 
 .navbar-left, .navbar-center, .navbar-right {
@@ -143,7 +150,8 @@ body {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
-    padding: 1rem;
+    padding: 0.5rem;
+    overflow: visible;
   }
   
   .hamburger-menu {
@@ -219,7 +227,7 @@ body {
     color: #2d6cdf;
   }
   .navbar-main-items.mobile {
-    position: absolute;
+    position: fixed;
     top: 40px;
     left: 0;
     right: 0;
@@ -231,12 +239,12 @@ body {
     align-items: flex-start;
     gap: 1.2rem;
     padding: 1.2rem 1.2rem 1.5rem 1.2rem;
-    z-index: 1003;
+    z-index: 1004;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     display: none;
   }
   .navbar-main-items.mobile.open {
-    display: flex;
+    display: flex !important;
   }
   .navbar-main-items.mobile .nav-link {
     font-size: 1.05rem;
@@ -261,35 +269,39 @@ body {
     height: 40px;
     position: relative;
     background: #2d6cdf;
-    z-index: 1002;
+    z-index: 1001;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
   }
   .logo {
-    flex: 1;
     font-size: 1rem;
-    min-width: 0;
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center;
     height: 40px;
+    white-space: nowrap;
   }
   .mobile-center-phone {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.95rem;
     padding: 0.1rem 0.2rem;
-    min-width: 0;
     color: #fff !important;
     height: 40px;
     background: none;
     border: none;
+    white-space: nowrap;
+  }
+  
+  /* Hide desktop phone center on mobile */
+  .navbar-phone-center {
+    display: none;
   }
   .hamburger-menu {
-    flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     background: none;
@@ -297,15 +309,21 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    min-width: 0;
     height: 40px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 40px;
   }
 }
 
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
   .navbar {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .navbar-right {
@@ -313,14 +331,70 @@ body {
   }
   
   .nav-link {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+  
+  .navbar-mobile-layout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    height: 50px;
+    gap: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+  }
+  
+  .mobile-center-phone {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  /* Hide desktop phone center on tablet */
+  .navbar-phone-center {
+    display: none;
+  }
+  
+  .navbar-main-items {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    width: auto;
+    flex-shrink: 0;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.5rem;
+    white-space: nowrap;
   }
 }
 
 /* Desktop Styles */
 @media (min-width: 1025px) {
   .navbar {
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
   }
   
   .hamburger-menu {
@@ -341,6 +415,72 @@ body {
   
   .mobile-menu-overlay {
     display: none !important;
+  }
+  
+  /* Left section - Logo */
+  .navbar-mobile-layout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    height: 50px;
+    flex-shrink: 0;
+    min-width: 0;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+  }
+  
+  /* Hide phone number in mobile layout on desktop */
+  .mobile-center-phone {
+    display: none !important;
+  }
+  
+  /* Center section - Phone number */
+  .navbar-phone-center {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    height: 50px;
+    min-width: 0;
+    position: relative;
+    padding-right: 2rem;
+  }
+  
+  .navbar-phone-center .contact-number-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  
+  /* Right section - Navigation links */
+  .navbar-main-items {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    width: auto;
+    flex-shrink: 0;
+    min-width: 0;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    white-space: nowrap;
   }
 }
 
